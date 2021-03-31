@@ -6,7 +6,7 @@ const connectDB = require('./config/db');
 const app = express();
 
 //connect to mongoDB database
-//connectDB(); --- not going to run this function till we get mongo URI connection string
+connectDB();
 
 // middleware
 app.use(cors());

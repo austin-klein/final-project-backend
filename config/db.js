@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // connection to database
 const connectDB = async () => {
-    await mongoose.connect('MONGO STRING HERE', {
+    await mongoose.connect('mongodb+srv://Test:TwdaN1OxTSBYICbl@cluster0.ak6zj.mongodb.net/javashare?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useCreateIndex: true,
         useUnifiedTopology: true,
@@ -13,3 +13,5 @@ const connectDB = async () => {
 };
 
 module.exports = connectDB;
+
+
