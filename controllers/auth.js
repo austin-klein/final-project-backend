@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const model = {} //using this till model is created
+const user = require('../models/user');
 
 //register logic
 exports.register = (req, res, next) => {
     const newUser = req.body
 
-    model.create(newUser, (err, data) => {
+    user.create(newUser, (err, data) => {
         if (err) {
             res.staus(500).send(err);
         } else {
@@ -13,6 +13,8 @@ exports.register = (req, res, next) => {
         }
     })
 }
+
+
 
 //login logic
 exports.login = (req, res, next) => {
