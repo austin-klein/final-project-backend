@@ -7,7 +7,7 @@ exports.register = (req, res, next) => {
 
     user.create(newUser, (err, data) => {
         if (err) {
-            res.staus(500).send(err);
+            res.status(500).send(err);
         } else {
             res.status(201).send(data);
         }
