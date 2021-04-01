@@ -25,4 +25,4 @@ password : {
 
 });
 
-model.exports = mongoose.model("User", UserSchema)
+module.exports = mongoose.model("User", UserSchema)
