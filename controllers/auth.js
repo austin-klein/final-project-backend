@@ -3,11 +3,11 @@ const User = require('../models/User');
 
 //register logic
 exports.register = async (req, res, next) => {
-    const { name, email, password } = req.body;
+    const { username, firstName, lastName, email, password } = req.body;
 
     try {
         const user = await User.create({
-            name, email, password
+            username, firstName, lastName, email, password
         });
 
         sendToken(user, 201, res);

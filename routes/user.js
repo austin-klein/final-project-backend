@@ -4,7 +4,7 @@ const { getUsers } = require('../controllers/user');
 const { protect } = require('../middleware/protect');
 
 // Get all users
-router.route('/users').get(protect, getUsers);
+router.route('/').get(protect, getUsers);
 
 
 module.exports = router
