@@ -9,10 +9,9 @@ exports.getUsers = async (req, res) => {
 exports.addCoffee = async (req, res) => {
 
     try {
-        const username = 'test';
-        const body = ["test", "hi"]
-
-        const updatedUser = await User.updateOne({ username: username }, { $addToSet: { coffee: body } });
+        const username = 'test123';
+        console.log(req.body.coffee)
+        const updatedUser = await User.updateOne({ username: username }, { $addToSet: { coffee: req.body.coffee } });
         res.send(updatedUser)
     } catch (error) {
         res.send(error);
@@ -22,7 +21,7 @@ exports.addCoffee = async (req, res) => {
 };
 
 exports.getCoffee = async (req, res) => {
-    const username = 'test';
+    const username = 'test123';
 
     try {
         const user = await User.findOne({ username });
