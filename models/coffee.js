@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 
 const CoffeeSchema =new mongoose.Schema({
 
+
 name: {
 
 
@@ -46,6 +47,20 @@ name: {
     required: true,
 
     name: "frappacino"
+},
+
+name: {
+
+
+    type: String,
+
+    required: true,
+
+    id : "c5",
+
+    name: "espresso",
+
+
 }
 
 
