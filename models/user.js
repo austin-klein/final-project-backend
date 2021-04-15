@@ -34,6 +34,10 @@ const UserSchema = new mongoose.Schema({
         reqired: true,
         min: 4,
         max: 250
+    },
+
+    coffee: {
+        type: Array
     }
 });
 
