@@ -9,9 +9,8 @@ exports.getUsers = async (req, res) => {
 exports.addCoffee = async (req, res) => {
 
     try {
-        const username = 'test123';
-        console.log(req.body.coffee)
-        const updatedUser = await User.updateOne({ username: username }, { $addToSet: { coffee: req.body.coffee } });
+        const { username, coffee } = req.body;
+        const updatedUser = await User.updateOne({ username: username }, { $addToSet: { coffee: coffee } });
         res.send(updatedUser)
     } catch (error) {
         res.send(error);
@@ -21,10 +20,10 @@ exports.addCoffee = async (req, res) => {
 };
 
 exports.getCoffee = async (req, res) => {
-    const username = 'test123';
+    const username = req.query.username;
 
     try {
-        const user = await User.findOne({ username });
+        const user = await User.findOne({ username: username });
         res.send(user.coffee);
     } catch (error) {
         res.send(error);

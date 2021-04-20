@@ -10,7 +10,7 @@ const app = express();
 
 
 const CONNECTION_URL = 'mongodb+srv://Test:<password>@cluster0.ak6zj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
 
 
 // imediatly above here the password needs to be in there

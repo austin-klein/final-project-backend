@@ -22,9 +22,9 @@ exports.register = async (req, res, next) => {
 
 //login logic
 exports.login = async (req, res, next) => {
-    const { email, password } = req.body;
+    const { username, password } = req.body;
 
-    if (!email || !password) {
+    if (!username || !password) {
         res.status(400).json({
             success: false,
             error: 'Need Email and Password'
@@ -32,7 +32,7 @@ exports.login = async (req, res, next) => {
     }
 
     try {
-        const user = await User.findOne({ email }).select('+password');
+        const user = await User.findOne({ username }).select('+password');
 
         if (!user) {
             res.status(404).json({
