@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const User = require('../models/User');
+const Coffee = require('../models/coffee')
 
 exports.getUsers = async (req, res) => {
     const users = await User.find()
@@ -30,7 +31,30 @@ exports.getCoffee = async (req, res) => {
     }
 }
 
-// 'strong'
-// 'caffine'
-// 'sugar'
-// 'dairy'
+exports.getItems = (req, res, next) => {
+    Coffee.find((err, data) => {
+        if (err) {
+            res.status(500).send(err)
+        } else {
+            console.log(data);
+            res.status(200).send(data)
+        }
+    })
+};
+
+// exports.addItems = async (req, res) => {
+
+//     try {
+//         const cof = await Coffee.create({
+//             name: 'Cappuccino',
+//             desc: 'Shot of espresso with 50% steamed milk',
+//             image: 'https://globalassets.starbucks.com/assets/5c515339667943ce84dc56effdf5fc1b.jpg?impolicy=1by1_wide_1242',
+//             strong: false
+//         })
+//         res.send(cof)
+//     } catch (error) {
+//         res.send(error);
+//     }
+
+
+// };
