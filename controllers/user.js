@@ -8,7 +8,6 @@ exports.getUsers = async (req, res) => {
 }
 
 exports.addCoffee = async (req, res) => {
-
     try {
         const { username, coffee } = req.body;
         const updatedUser = await User.updateOne({ username: username }, { $addToSet: { coffee: coffee } });
@@ -16,8 +15,6 @@ exports.addCoffee = async (req, res) => {
     } catch (error) {
         res.send(error);
     }
-
-
 };
 
 exports.getCoffee = async (req, res) => {
