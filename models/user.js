@@ -59,7 +59,7 @@ UserSchema.methods.matchPasswords = async function (password) {
 // assigning jwt token
 const jwtSecret = '3c0227ede3754420bf383f57040d28c2d552ba00161cf9ab19ee516f18e048d682ada7';
 UserSchema.methods.getToken = function () {
-    return jwt.sign({ id: this._id }, jwtSecret, { expiresIn: '10min' })
+    return jwt.sign({ id: this._id }, jwtSecret, { expiresIn: '45min' })
 }
 
 module.exports = mongoose.model("User", UserSchema)
