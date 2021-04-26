@@ -10,7 +10,7 @@ exports.getUsers = async (req, res) => {
 exports.addCoffee = async (req, res) => {
     try {
         const { username, coffee } = req.body;
-        const updatedUser = await User.updateOne({ username: username }, { $addToSet: { coffee: coffee } });
+        const updatedUser = await User.updateOne({ username: username }, { $set: { coffee: coffee } });
         res.send(updatedUser)
     } catch (error) {
         res.send(error);
@@ -38,20 +38,3 @@ exports.getItems = (req, res, next) => {
         }
     })
 };
-
-// exports.addItems = async (req, res) => {
-
-//     try {
-//         const cof = await Coffee.create({
-//             name: 'Cappuccino',
-//             desc: 'Shot of espresso with 50% steamed milk',
-//             image: 'https://globalassets.starbucks.com/assets/5c515339667943ce84dc56effdf5fc1b.jpg?impolicy=1by1_wide_1242',
-//             strong: false
-//         })
-//         res.send(cof)
-//     } catch (error) {
-//         res.send(error);
-//     }
-
-
-// };
