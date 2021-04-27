@@ -4,9 +4,8 @@ const { getMessages, addMessage } = require('../controllers/message');
 const { protect } = require('../middleware/protect');
 
 // Get Coffee
-router.route('/share').get(getMessages); //protect
-router.route('/share').post(addMessage); //protect
-// router.route('/add').post(addItems);
+router.route('/share').get(protect, getMessages);
+router.route('/share').post(protect, addMessage);
 
 
 module.exports = router
